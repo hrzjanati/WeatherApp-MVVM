@@ -9,9 +9,10 @@ import Foundation
 import CoreLocation
 import UIKit
 
-class HomeViewModel {
+class HomeViewModel: CurrentLocationDelegate {
+
     public var reloadTableView: (()->())?
-    public var tableViewHeader = UIView()
+    public var tableViewHeader : (()->())?
     public var showError: (()->())?
     private var cellViewModels: [dailyDetails] = [dailyDetails]() {
         didSet {self.reloadTableView?()}
@@ -20,27 +21,12 @@ class HomeViewModel {
     public var numberOfCells: Int {
         return cellViewModels.count
     }
+    public func callLocation() {
+        CurrentLocation.sheared.setupLocationManager(delegate: self)
+    }
     
-    public func fetchData( complition : @escaping () -> (Void)) {
-        CurrentLocation.sheared.getGPSLocation { lat, lng in
-            RequestHelper.shaered.dataRequest(with:"https://api.openweathermap.org/data/2.5/onecall?lat=\(lat)&lon=\(lng)&exclude=24,7&appid=628409d2c72ec95050248eb8dd5a6f22" ,
-                                              objectType: WeekWeatherModel.self) {  (result: Result) in
-                switch result {
-                case .success(let object):
-                    print(object)
-                    self.createCellModel(datas: object.daily)
-                    self.getCurrentWeather(current: object.current , timeZone: object.timezone)
-                    DispatchQueue.main.async { [self] in
-                        self.reloadTableView?()
-                        complition()
-                    }
-                case .failure(let error):
-                    print(error)
-                    self.showError?()
-                }
-            }
-            
-        }
+    public func passCurrentLocation(lat: String, lng: String) {
+        fetchData(lat, lng)
     }
     
     private func getCurrentWeather(current : Current , timeZone : String) {
@@ -60,6 +46,25 @@ class HomeViewModel {
     }
     
     
+    private func fetchData(_ lat : String , _ lng : String) {
+            RequestHelper.shaered.dataRequest(with:"https://api.openweathermap.org/data/2.5/onecall?lat=\(lat)&lon=\(lng)&exclude=24,7&appid=628409d2c72ec95050248eb8dd5a6f22" ,
+                                              objectType: WeekWeatherModel.self) {  (result: Result) in
+                switch result {
+                case .success(let object):
+                    print(object)
+                    self.createCellModel(datas: object.daily)
+                    self.getCurrentWeather(current: object.current , timeZone: object.timezone)
+                    DispatchQueue.main.async { [self] in
+                        reloadTableView?()
+                        tableViewHeader?()
+                    }
+                case .failure(let error):
+                    print(error)
+                    self.showError?()
+                }
+            }
+    }
+
     private func createCellModel( datas : [Daily]) {
         var vms = [dailyDetails]()
         for data in datas  {

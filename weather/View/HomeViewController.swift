@@ -6,33 +6,35 @@
 //
 
 import UIKit
+import CoreLocation
 
-class HomeViewController: UIViewController {
-    
+class HomeViewController: UIViewController, CLLocationManagerDelegate {
+   
     @IBOutlet weak var tableView: UITableView!
     let viewModel = HomeViewModel()
-        override func viewDidLoad() {
+    
+    override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        initViewModel()
+       initViewModel()
+        
     }
-
+  
     private func initViewModel(){
         viewModel.reloadTableView = {
-             DispatchQueue.main.async { self.tableView.reloadData() }
-         }
-        viewModel.showError = {
-             DispatchQueue.main.async { self.showAlert("Ups, something went wrong") }
-         }
-        DispatchQueue.main.async { [self] in
-                self.tableView.tableHeaderView = viewModel.tableViewHeader
-            }
-      
-        viewModel.fetchData { 
-            self.tableView.tableHeaderView = self.creatTableViewHeader()
+            DispatchQueue.main.async { self.tableView.reloadData() }
         }
-     }
+        viewModel.showError = {
+            DispatchQueue.main.async { self.showAlert("Ups, something went wrong") }
+        }
+        viewModel.tableViewHeader = {
+            DispatchQueue.main.async {
+                self.tableView.tableHeaderView = self.creatTableViewHeader()
+            }
+        }
+        viewModel.callLocation()
+    }
     
     private func creatTableViewHeader() -> UIView {
         let headerView = StretchyTableHeaderView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 250))
@@ -46,7 +48,7 @@ class HomeViewController: UIViewController {
         return headerView
     }
 }
-// MARK: -
+// MARK: - UITableViewDataSource & UITableViewDelegate
 extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard let headerView = self.tableView.tableHeaderView as? StretchyTableHeaderView else {return}
@@ -55,11 +57,11 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100.0
     }
-
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfCells
     }
-     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellHome", for: indexPath) as! HomeWeatherCellTableViewCell
         let cellViewModel = viewModel.getCell(indexPaths: indexPath)
@@ -72,6 +74,4 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
     }
-    
-    
 }
