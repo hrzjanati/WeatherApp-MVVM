@@ -51,7 +51,6 @@ class HomeViewModel: CurrentLocationDelegate {
                                               objectType: WeekWeatherModel.self) {  (result: Result) in
                 switch result {
                 case .success(let object):
-                    print(object)
                     self.createCellModel(datas: object.daily)
                     self.getCurrentWeather(current: object.current , timeZone: object.timezone)
                     DispatchQueue.main.async { [self] in

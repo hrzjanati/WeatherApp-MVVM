@@ -12,13 +12,13 @@ class HomeWeatherCellTableViewCell: UITableViewCell {
     @IBOutlet weak var dayLb: UILabel!
     @IBOutlet weak var mainImg: UIImageView!
     @IBOutlet weak var minTempLb: UILabel!
-    @IBOutlet weak var macTempLb: UILabel!
+    @IBOutlet weak var maxTempLb: UILabel!
     
     public func configuration(day: String , main : String, min : String , max : String) {
         dayLb.text = day
         mainImg.image = UIImage(named: main)
         minTempLb.text = min
-        macTempLb.text = max
+        maxTempLb.text = max
     }
    
 }

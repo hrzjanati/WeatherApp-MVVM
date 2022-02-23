@@ -9,18 +9,18 @@ import UIKit
 import CoreLocation
 
 class HomeViewController: UIViewController, CLLocationManagerDelegate {
-   
+    
     @IBOutlet weak var tableView: UITableView!
-    let viewModel = HomeViewModel()
+    fileprivate let viewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
-       initViewModel()
+        initViewModel()
         
     }
-  
+    
     private func initViewModel(){
         viewModel.reloadTableView = {
             DispatchQueue.main.async { self.tableView.reloadData() }
@@ -30,21 +30,19 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         }
         viewModel.tableViewHeader = {
             DispatchQueue.main.async {
-                self.tableView.tableHeaderView = self.creatTableViewHeader()
+                self.tableView.tableHeaderView = self.createTableViewHeader()
             }
         }
         viewModel.callLocation()
     }
     
-    private func creatTableViewHeader() -> UIView {
+    private func createTableViewHeader() -> UIView {
         let headerView = StretchyTableHeaderView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 250))
         headerView.imageView.image = UIImage(named: viewModel.getcurrent().imageName)
         headerView.locationLabel.text = viewModel.getcurrent().locationName
         headerView.tempLabel.text = "\(viewModel.getcurrent().temp)°"
         headerView.descrebtionLabel.text = viewModel.getcurrent().descrebtion
-        
         self.tableView.tableHeaderView = headerView
-        
         return headerView
     }
 }
@@ -73,5 +71,8 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
+        let sb = UIStoryboard(name: "Details", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "DetailsViewControllerID")
+        self.show(vc, sender: nil)
     }
 }

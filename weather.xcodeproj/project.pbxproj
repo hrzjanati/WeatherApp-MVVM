@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		167BDF9227B92A9900BF7C83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BDF9127B92A9900BF7C83 /* AppDelegate.swift */; };
-		167BDF9427B92A9A00BF7C83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BDF9327B92A9A00BF7C83 /* SceneDelegate.swift */; };
-		167BDF9927B92A9A00BF7C83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 167BDF9727B92A9A00BF7C83 /* Main.storyboard */; };
 		167BDF9B27B92A9C00BF7C83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167BDF9A27B92A9C00BF7C83 /* Assets.xcassets */; };
 		167BDF9E27B92A9C00BF7C83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 167BDF9C27B92A9C00BF7C83 /* LaunchScreen.storyboard */; };
 		167BDFB127B94A4100BF7C83 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BDFB027B94A4100BF7C83 /* HomeViewController.swift */; };
@@ -20,7 +18,13 @@
 		167BDFE927B9A2AE00BF7C83 /* HomeWeatherCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BDFE827B9A2AE00BF7C83 /* HomeWeatherCellTableViewCell.swift */; };
 		167BDFEB27B9B7F000BF7C83 /* String + KelvinConvertor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BDFEA27B9B7F000BF7C83 /* String + KelvinConvertor.swift */; };
 		167BDFED27B9B9ED00BF7C83 /* String+EpechToDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BDFEC27B9B9ED00BF7C83 /* String+EpechToDate.swift */; };
-		168BD50C27C6469C00A9557B /* CurrentLocation+CoreLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168BD50B27C6469C00A9557B /* CurrentLocation+CoreLocation.swift */; };
+		168BD50C27C6469C00A9557B /* CurrentLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168BD50B27C6469C00A9557B /* CurrentLocation.swift */; };
+		168BD51727C650A100A9557B /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168BD51627C650A100A9557B /* DetailsViewController.swift */; };
+		168BD51927C650AE00A9557B /* Details.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 168BD51827C650AE00A9557B /* Details.storyboard */; };
+		168BD51B27C6596400A9557B /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168BD51A27C6596400A9557B /* DetailsViewModel.swift */; };
+		168BD51D27C6597200A9557B /* DetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168BD51C27C6597200A9557B /* DetailsModel.swift */; };
+		168BD51F27C6613900A9557B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 168BD51E27C6613900A9557B /* Home.storyboard */; };
+		168BD52127C662D700A9557B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168BD52027C662D700A9557B /* SceneDelegate.swift */; };
 		168CAFB227BA6FDA00E52AE4 /* dailyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168CAFB127BA6FDA00E52AE4 /* dailyDetails.swift */; };
 		16F5E79C27BB0B500078221A /* StretchyTableHeader+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F5E79B27BB0B500078221A /* StretchyTableHeader+UIView.swift */; };
 		16F5E79E27BB2D750078221A /* currentModelForView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F5E79D27BB2D750078221A /* currentModelForView.swift */; };
@@ -29,8 +33,6 @@
 /* Begin PBXFileReference section */
 		167BDF8E27B92A9900BF7C83 /* weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		167BDF9127B92A9900BF7C83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		167BDF9327B92A9A00BF7C83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		167BDF9827B92A9A00BF7C83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		167BDF9A27B92A9C00BF7C83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		167BDF9D27B92A9C00BF7C83 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		167BDF9F27B92A9C00BF7C83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -42,7 +44,13 @@
 		167BDFE827B9A2AE00BF7C83 /* HomeWeatherCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWeatherCellTableViewCell.swift; sourceTree = "<group>"; };
 		167BDFEA27B9B7F000BF7C83 /* String + KelvinConvertor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + KelvinConvertor.swift"; sourceTree = "<group>"; };
 		167BDFEC27B9B9ED00BF7C83 /* String+EpechToDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+EpechToDate.swift"; sourceTree = "<group>"; };
-		168BD50B27C6469C00A9557B /* CurrentLocation+CoreLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentLocation+CoreLocation.swift"; sourceTree = "<group>"; };
+		168BD50B27C6469C00A9557B /* CurrentLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentLocation.swift; sourceTree = "<group>"; };
+		168BD51627C650A100A9557B /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		168BD51827C650AE00A9557B /* Details.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Details.storyboard; sourceTree = "<group>"; };
+		168BD51A27C6596400A9557B /* DetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
+		168BD51C27C6597200A9557B /* DetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsModel.swift; sourceTree = "<group>"; };
+		168BD51E27C6613900A9557B /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		168BD52027C662D700A9557B /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../../../SceneDelegate.swift; sourceTree = "<group>"; };
 		168CAFB127BA6FDA00E52AE4 /* dailyDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dailyDetails.swift; sourceTree = "<group>"; };
 		16F5E79B27BB0B500078221A /* StretchyTableHeader+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StretchyTableHeader+UIView.swift"; sourceTree = "<group>"; };
 		16F5E79D27BB2D750078221A /* currentModelForView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentModelForView.swift; sourceTree = "<group>"; };
@@ -78,33 +86,32 @@
 		167BDF9027B92A9900BF7C83 /* weather */ = {
 			isa = PBXGroup;
 			children = (
-				167BDFA927B949A900BF7C83 /* SupportingFiles */,
+				167BDFA927B949A900BF7C83 /* Resoutces */,
 				167BDFB627B952F800BF7C83 /* Network */,
 				167BDFAF27B94A1500BF7C83 /* Helper */,
 				167BDFE527B99AB800BF7C83 /* Extensions */,
-				167BDFAA27B949C100BF7C83 /* View */,
-				167BDFAD27B949CE00BF7C83 /* ViewModel */,
-				167BDFAE27B949F000BF7C83 /* Model */,
+				168BD50D27C64F0A00A9557B /* Home */,
+				168BD50E27C64F2700A9557B /* Details */,
 				167BDF9F27B92A9C00BF7C83 /* Info.plist */,
 			);
 			path = weather;
 			sourceTree = "<group>";
 		};
-		167BDFA927B949A900BF7C83 /* SupportingFiles */ = {
+		167BDFA927B949A900BF7C83 /* Resoutces */ = {
 			isa = PBXGroup;
 			children = (
 				167BDF9127B92A9900BF7C83 /* AppDelegate.swift */,
-				167BDF9327B92A9A00BF7C83 /* SceneDelegate.swift */,
-				167BDF9727B92A9A00BF7C83 /* Main.storyboard */,
+				168BD52027C662D700A9557B /* SceneDelegate.swift */,
 				167BDF9C27B92A9C00BF7C83 /* LaunchScreen.storyboard */,
 				167BDF9A27B92A9C00BF7C83 /* Assets.xcassets */,
 			);
-			path = SupportingFiles;
+			path = Resoutces;
 			sourceTree = "<group>";
 		};
 		167BDFAA27B949C100BF7C83 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				168BD51E27C6613900A9557B /* Home.storyboard */,
 				167BDFB027B94A4100BF7C83 /* HomeViewController.swift */,
 				167BDFE827B9A2AE00BF7C83 /* HomeWeatherCellTableViewCell.swift */,
 			);
@@ -132,7 +139,7 @@
 		167BDFAF27B94A1500BF7C83 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				168BD50B27C6469C00A9557B /* CurrentLocation+CoreLocation.swift */,
+				168BD50B27C6469C00A9557B /* CurrentLocation.swift */,
 				16F5E79B27BB0B500078221A /* StretchyTableHeader+UIView.swift */,
 			);
 			path = Helper;
@@ -154,6 +161,51 @@
 				167BDFEC27B9B9ED00BF7C83 /* String+EpechToDate.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		168BD50D27C64F0A00A9557B /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				167BDFAA27B949C100BF7C83 /* View */,
+				167BDFAD27B949CE00BF7C83 /* ViewModel */,
+				167BDFAE27B949F000BF7C83 /* Model */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		168BD50E27C64F2700A9557B /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				168BD50F27C64F3B00A9557B /* View */,
+				168BD51127C64F4700A9557B /* ViewModel */,
+				168BD51027C64F4100A9557B /* Model */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		168BD50F27C64F3B00A9557B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				168BD51827C650AE00A9557B /* Details.storyboard */,
+				168BD51627C650A100A9557B /* DetailsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		168BD51027C64F4100A9557B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				168BD51C27C6597200A9557B /* DetailsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		168BD51127C64F4700A9557B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				168BD51A27C6596400A9557B /* DetailsViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,8 +267,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				167BDF9E27B92A9C00BF7C83 /* LaunchScreen.storyboard in Resources */,
+				168BD51F27C6613900A9557B /* Home.storyboard in Resources */,
 				167BDF9B27B92A9C00BF7C83 /* Assets.xcassets in Resources */,
-				167BDF9927B92A9A00BF7C83 /* Main.storyboard in Resources */,
+				168BD51927C650AE00A9557B /* Details.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,31 +283,26 @@
 				167BDFB127B94A4100BF7C83 /* HomeViewController.swift in Sources */,
 				167BDFB827B9532600BF7C83 /* RequestHelper.swift in Sources */,
 				16F5E79C27BB0B500078221A /* StretchyTableHeader+UIView.swift in Sources */,
+				168BD51D27C6597200A9557B /* DetailsModel.swift in Sources */,
+				168BD51B27C6596400A9557B /* DetailsViewModel.swift in Sources */,
 				167BDFE727B99AE100BF7C83 /* UIViewController+Extensions.swift in Sources */,
 				167BDF9227B92A9900BF7C83 /* AppDelegate.swift in Sources */,
-				168BD50C27C6469C00A9557B /* CurrentLocation+CoreLocation.swift in Sources */,
+				168BD52127C662D700A9557B /* SceneDelegate.swift in Sources */,
+				168BD50C27C6469C00A9557B /* CurrentLocation.swift in Sources */,
 				167BDFEB27B9B7F000BF7C83 /* String + KelvinConvertor.swift in Sources */,
 				167BDFB327B94B2300BF7C83 /* HomeViewModel.swift in Sources */,
 				167BDFE427B9992C00BF7C83 /* WeekWeathherModel.swift in Sources */,
-				167BDF9427B92A9A00BF7C83 /* SceneDelegate.swift in Sources */,
 				168CAFB227BA6FDA00E52AE4 /* dailyDetails.swift in Sources */,
 				167BDFE927B9A2AE00BF7C83 /* HomeWeatherCellTableViewCell.swift in Sources */,
 				16F5E79E27BB2D750078221A /* currentModelForView.swift in Sources */,
 				167BDFED27B9B9ED00BF7C83 /* String+EpechToDate.swift in Sources */,
+				168BD51727C650A100A9557B /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		167BDF9727B92A9A00BF7C83 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				167BDF9827B92A9A00BF7C83 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		167BDF9C27B92A9C00BF7C83 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -392,9 +440,12 @@
 				DEVELOPMENT_TEAM = B48Q8RY5GC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = weather/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Give permanent access to the location";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = Description;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Give permanent access to the location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Home;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -420,9 +471,12 @@
 				DEVELOPMENT_TEAM = B48Q8RY5GC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = weather/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Give permanent access to the location";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = Description;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Give permanent access to the location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = Home;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
