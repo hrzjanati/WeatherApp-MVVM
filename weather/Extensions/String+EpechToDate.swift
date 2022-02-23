@@ -8,7 +8,7 @@
 import Foundation
 
 extension String {
-    func convertEpechTimeToDate() -> String {
+    func convertEpechTimeToDay() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.timeStyle = DateFormatter.Style.medium
         dateFormatter.dateStyle = DateFormatter.Style.medium

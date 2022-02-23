@@ -12,6 +12,10 @@ struct dailyDetails {
     let main : String
     let min : String
     let max : String
+    let sunrise : String
+    let sunset : String
+    let moonrise : String
+    let moonset : String
 }
 
 

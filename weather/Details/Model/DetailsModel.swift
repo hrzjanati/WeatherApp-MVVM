@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct DetailsDaily {
+    let title : String
+    let value : String
+}

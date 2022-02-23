@@ -71,8 +71,10 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath)
-        let sb = UIStoryboard(name: "Details", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "DetailsViewControllerID")
-        self.show(vc, sender: nil)
+        let vc = UIStoryboard.init(name: "Details", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailsViewControllerID") as? DetailsViewController
+        let cellViewModel = viewModel.getCell(indexPaths: indexPath)
+        vc?.initViewModel(model: viewModel.createDetails([cellViewModel]))
+        self.navigationController?.pushViewController(vc!, animated: true)
+        
     }
 }
