@@ -40,6 +40,7 @@ class CurrentLocation: NSObject , CLLocationManagerDelegate{
             delegate?.passCurrentLocation(lat: "\(locationValue.latitude)", lng: "\(locationValue.longitude)")
             locationManager?.stopUpdatingLocation()
         }
+        currentLocation = nil
     }
     
     internal func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {

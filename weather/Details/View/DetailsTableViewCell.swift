@@ -12,7 +12,8 @@ class DetailsTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var iconImage: UIImageView!
 
-    public func configuration(title : String , imageName : String) {
+    public func configuration(title : String , imageName : String , color : UIColor) {
+        titleLabel.textColor = color
         titleLabel.text = title
         iconImage.image = UIImage(named: imageName)
     }

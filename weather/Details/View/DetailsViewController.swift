@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailsViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     fileprivate let viewModel = DetailsViewModel()
@@ -24,14 +24,14 @@ class DetailsViewController: UIViewController {
             DispatchQueue.main.async { self.tableView.reloadData() }
         }
         viewModel.showError = {
-            DispatchQueue.main.async { self.showAlert("Ups, something went wrong") }
+            DispatchQueue.main.async { self.showAlert("Ups, something went wrong in Details View") }
         }
         viewModel.fetchModel(Model: model)
     }
 }
 //MARK: - UITableViewDataSource
 extension DetailsViewController : UITableViewDataSource {
- 
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfCells
     }
@@ -39,7 +39,9 @@ extension DetailsViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsTableViewCellID", for: indexPath) as! DetailsTableViewCell
         let cellM = viewModel.getCell(indexPaths: indexPath)
-        cell.configuration(title: "\(cellM.title)", imageName: "\(cellM.value)")
+        cell.configuration(title: "\(cellM.title)\(suffixString(status: cellM.value))",
+                           imageName: "\(cellM.value)",
+                           color: setColor(status: "\(cellM.value)"))
         return cell
     }
 }

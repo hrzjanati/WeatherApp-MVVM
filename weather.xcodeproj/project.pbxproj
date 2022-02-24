@@ -28,6 +28,8 @@
 		168CAFB227BA6FDA00E52AE4 /* dailyDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168CAFB127BA6FDA00E52AE4 /* dailyDetails.swift */; };
 		16B098E127C6841100F45710 /* DetailsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B098E027C6841100F45710 /* DetailsTableViewCell.swift */; };
 		16B098E327C6990C00F45710 /* String+EpechToHour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B098E227C6990C00F45710 /* String+EpechToHour.swift */; };
+		16B8E84327C771A7000B8F0C /* UIViewController + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8E84227C771A7000B8F0C /* UIViewController + UIColor.swift */; };
+		16B8E84527C775C8000B8F0C /* UIViewcontroller+SuffixString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8E84427C775C8000B8F0C /* UIViewcontroller+SuffixString.swift */; };
 		16F5E79C27BB0B500078221A /* StretchyTableHeader+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F5E79B27BB0B500078221A /* StretchyTableHeader+UIView.swift */; };
 		16F5E79E27BB2D750078221A /* currentModelForView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F5E79D27BB2D750078221A /* currentModelForView.swift */; };
 /* End PBXBuildFile section */
@@ -56,6 +58,8 @@
 		168CAFB127BA6FDA00E52AE4 /* dailyDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dailyDetails.swift; sourceTree = "<group>"; };
 		16B098E027C6841100F45710 /* DetailsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsTableViewCell.swift; sourceTree = "<group>"; };
 		16B098E227C6990C00F45710 /* String+EpechToHour.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+EpechToHour.swift"; sourceTree = "<group>"; };
+		16B8E84227C771A7000B8F0C /* UIViewController + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + UIColor.swift"; sourceTree = "<group>"; };
+		16B8E84427C775C8000B8F0C /* UIViewcontroller+SuffixString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewcontroller+SuffixString.swift"; sourceTree = "<group>"; };
 		16F5E79B27BB0B500078221A /* StretchyTableHeader+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StretchyTableHeader+UIView.swift"; sourceTree = "<group>"; };
 		16F5E79D27BB2D750078221A /* currentModelForView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentModelForView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -164,6 +168,8 @@
 				167BDFEA27B9B7F000BF7C83 /* String + KelvinConvertor.swift */,
 				167BDFEC27B9B9ED00BF7C83 /* String+EpechToDate.swift */,
 				16B098E227C6990C00F45710 /* String+EpechToHour.swift */,
+				16B8E84227C771A7000B8F0C /* UIViewController + UIColor.swift */,
+				16B8E84427C775C8000B8F0C /* UIViewcontroller+SuffixString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -294,10 +300,12 @@
 				168BD51B27C6596400A9557B /* DetailsViewModel.swift in Sources */,
 				167BDFE727B99AE100BF7C83 /* UIViewController+Extensions.swift in Sources */,
 				167BDF9227B92A9900BF7C83 /* AppDelegate.swift in Sources */,
+				16B8E84327C771A7000B8F0C /* UIViewController + UIColor.swift in Sources */,
 				167F2C7127C66A6B00C96621 /* SceneDelegate.swift in Sources */,
 				168BD50C27C6469C00A9557B /* CurrentLocation.swift in Sources */,
 				167BDFEB27B9B7F000BF7C83 /* String + KelvinConvertor.swift in Sources */,
 				167BDFB327B94B2300BF7C83 /* HomeViewModel.swift in Sources */,
+				16B8E84527C775C8000B8F0C /* UIViewcontroller+SuffixString.swift in Sources */,
 				167BDFE427B9992C00BF7C83 /* WeekWeathherModel.swift in Sources */,
 				16B098E127C6841100F45710 /* DetailsTableViewCell.swift in Sources */,
 				168CAFB227BA6FDA00E52AE4 /* dailyDetails.swift in Sources */,

@@ -12,11 +12,13 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     fileprivate let viewModel = HomeViewModel()
+    private let refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.dataSource = self
         self.tableView.delegate = self
+        configurationUIRefresh()
         initViewModel()
         
     }
@@ -44,6 +46,18 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
         headerView.descrebtionLabel.text = viewModel.getcurrent().descrebtion
         self.tableView.tableHeaderView = headerView
         return headerView
+    }
+    
+    private func configurationUIRefresh() {
+        refreshControl.addTarget(self,
+                                 action: #selector(self.refresh(_:)),
+                                 for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        viewModel.callLocation()
+        refreshControl.endRefreshing()
     }
 }
 // MARK: - UITableViewDataSource & UITableViewDelegate

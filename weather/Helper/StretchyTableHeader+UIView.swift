@@ -49,7 +49,7 @@ class StretchyTableHeaderView: UIView {
         label.textAlignment = .center
         label.numberOfLines = 0
         label.font = font
-        label.textColor = .blue
+        label.textColor = .gray
         label.clipsToBounds = true
         label.backgroundColor = .clear
         label.contentMode = .scaleAspectFill
@@ -65,7 +65,7 @@ class StretchyTableHeaderView: UIView {
         imageView = UIImageView()
         imageView.clipsToBounds = true
         imageView.backgroundColor = .clear
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         containerView.addSubview(imageView)
     }
     
