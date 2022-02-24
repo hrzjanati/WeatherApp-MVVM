@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct dailyDetails {
+struct WeekDetails {
     let day : String
     let main : String
     let min : String

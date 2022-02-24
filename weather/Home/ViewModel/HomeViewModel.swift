@@ -14,7 +14,7 @@ class HomeViewModel: CurrentLocationDelegate {
     public var reloadTableView: (()->())?
     public var tableViewHeader : (()->())?
     public var showError: (()->())?
-    private var cellViewModels: [dailyDetails] = [dailyDetails]() {
+    private var cellViewModels: [WeekDetails] = [WeekDetails]() {
         didSet {self.reloadTableView?()}
     }
     private var currentWeather : currentModelForView?
@@ -33,11 +33,11 @@ class HomeViewModel: CurrentLocationDelegate {
         return currentWeather!
     }
     
-    public func getCell (indexPaths : IndexPath) -> dailyDetails{
+    public func getCell (indexPaths : IndexPath) -> WeekDetails{
         return cellViewModels[indexPaths.row]
     }
     
-    public func createDetails(_ model : [dailyDetails])-> [DetailsDaily]  {
+    public func createDetails(_ model : [WeekDetails])-> [DetailsDaily]  {
         var detailsArray = [DetailsDaily]()
         for data in model {
             detailsArray.append(DetailsDaily(title: data.min, value: "MinTemp"))
@@ -78,9 +78,9 @@ class HomeViewModel: CurrentLocationDelegate {
     }
 
     private func createCellModel( datas : [Daily]) {
-        var vms = [dailyDetails]()
+        var vms = [WeekDetails]()
         for data in datas  {
-            vms.append(dailyDetails(day: "\(data.dt)".convertEpechTimeToDay(),
+            vms.append(WeekDetails(day: "\(data.dt)".convertEpechTimeToDay(),
                                     main: data.weather[0].main.rawValue,
                                     min: "\(data.temp.min)".KelvinToC(),
                                     max: "\(data.temp.max)".KelvinToC(),

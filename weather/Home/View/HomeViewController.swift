@@ -41,7 +41,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     private func createTableViewHeader() -> UIView {
         let headerView = StretchyTableHeaderView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: 250))
         headerView.imageView.image = UIImage(named: viewModel.getcurrent().imageName)
-        headerView.locationLabel.text = viewModel.getcurrent().locationName
+        headerView.locationLabel.text = viewModel.getcurrent().locationName.upperBoundString("/")
         headerView.tempLabel.text = "\(viewModel.getcurrent().temp)°"
         headerView.descrebtionLabel.text = viewModel.getcurrent().descrebtion
         self.tableView.tableHeaderView = headerView
@@ -84,10 +84,9 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath)
         let vc = UIStoryboard.init(name: "Details", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailsViewControllerID") as? DetailsViewController
-        let cellViewModel = viewModel.getCell(indexPaths: indexPath)
-        vc?.initViewModel(model: viewModel.createDetails([cellViewModel]))
+        let rowsDetails = viewModel.getCell(indexPaths: indexPath)
+        vc?.initViewModel(model: viewModel.createDetails([rowsDetails]))
         self.navigationController?.pushViewController(vc!, animated: true)
         
     }
