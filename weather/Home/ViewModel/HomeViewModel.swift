@@ -10,7 +10,7 @@ import CoreLocation
 import UIKit
 
 class HomeViewModel: CurrentLocationDelegate {
-
+    
     public var reloadTableView: (()->())?
     public var tableViewHeader : (()->())?
     public var showError: (()->())?
@@ -28,7 +28,7 @@ class HomeViewModel: CurrentLocationDelegate {
     public func passCurrentLocation(lat: String, lng: String) {
         fetchData(lat, lng)
     }
-
+    
     public func getcurrent() -> currentModelForView {
         return currentWeather!
     }
@@ -51,43 +51,43 @@ class HomeViewModel: CurrentLocationDelegate {
     }
     
     private func getCurrentWeather(current : Current , timeZone : String) {
-       let currModel = currentModelForView(locationName: timeZone,
-                                           temp: current.temp.description.KelvinToC(),
-                                           imageName: current.weather[0].main.rawValue,
-                                           descrebtion: current.weather[0].weatherDescription)
+        let currModel = currentModelForView(locationName: timeZone,
+                                            temp: current.temp.description.KelvinToC(),
+                                            imageName: current.weather[0].main.rawValue,
+                                            descrebtion: current.weather[0].weatherDescription)
         
         currentWeather = currModel
     }
     
     private func fetchData(_ lat : String , _ lng : String) {
-            RequestHelper.shaered.dataRequest(with:"https://api.openweathermap.org/data/2.5/onecall?lat=\(lat)&lon=\(lng)&exclude=24,7&appid=628409d2c72ec95050248eb8dd5a6f22" ,
-                                              objectType: WeekWeatherModel.self) {  (result: Result) in
-                switch result {
-                case .success(let object):
-                    self.createCellModel(datas: object.daily)
-                    self.getCurrentWeather(current: object.current , timeZone: object.timezone)
-                    DispatchQueue.main.async { [self] in
-                        reloadTableView?()
-                        tableViewHeader?()
-                    }
-                case .failure(let error):
-                    print(error)
-                    self.showError?()
+        RequestHelper.shaered.dataRequest(with: API.latAndLong(lat: lat , long: lng).URLPathHome ,
+                                          objectType: WeekWeatherModel.self) {  (result: Result) in
+            switch result {
+            case .success(let object):
+                self.createCellModel(datas: object.daily)
+                self.getCurrentWeather(current: object.current , timeZone: object.timezone)
+                DispatchQueue.main.async { [self] in
+                    reloadTableView?()
+                    tableViewHeader?()
                 }
+            case .failure(let error):
+                print(error)
+                self.showError?()
             }
+        }
     }
-
+    
     private func createCellModel( datas : [Daily]) {
         var vms = [WeekDetails]()
         for data in datas  {
             vms.append(WeekDetails(day: "\(data.dt)".convertEpechTimeToDay(),
-                                    main: data.weather[0].main.rawValue,
-                                    min: "\(data.temp.min)".KelvinToC(),
-                                    max: "\(data.temp.max)".KelvinToC(),
-                                    sunrise: "\(data.sunrise)",
-                                    sunset: "\(data.sunset)",
-                                    moonrise: "\(data.moonrise)",
-                                    moonset: "\(data.moonset)"))
+                                   main: data.weather[0].main.rawValue,
+                                   min: "\(data.temp.min)".KelvinToC(),
+                                   max: "\(data.temp.max)".KelvinToC(),
+                                   sunrise: "\(data.sunrise)",
+                                   sunset: "\(data.sunset)",
+                                   moonrise: "\(data.moonrise)",
+                                   moonset: "\(data.moonset)"))
         }
         cellViewModels = vms
     }

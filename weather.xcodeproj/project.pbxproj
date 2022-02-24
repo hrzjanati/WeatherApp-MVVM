@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		165368C327C7D4EF00359709 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 165368C227C7D4EF00359709 /* API.swift */; };
 		167BDF9227B92A9900BF7C83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167BDF9127B92A9900BF7C83 /* AppDelegate.swift */; };
 		167BDF9B27B92A9C00BF7C83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167BDF9A27B92A9C00BF7C83 /* Assets.xcassets */; };
 		167BDF9E27B92A9C00BF7C83 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 167BDF9C27B92A9C00BF7C83 /* LaunchScreen.storyboard */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		165368C227C7D4EF00359709 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		167BDF8E27B92A9900BF7C83 /* weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = weather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		167BDF9127B92A9900BF7C83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		167BDF9A27B92A9C00BF7C83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 			children = (
 				168BD50B27C6469C00A9557B /* CurrentLocation.swift */,
 				16F5E79B27BB0B500078221A /* StretchyTableHeader+UIView.swift */,
+				165368C227C7D4EF00359709 /* API.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				167BDFB327B94B2300BF7C83 /* HomeViewModel.swift in Sources */,
 				16B8E84527C775C8000B8F0C /* UIViewController + SuffixString.swift in Sources */,
 				167BDFE427B9992C00BF7C83 /* WeekWeathherModel.swift in Sources */,
+				165368C327C7D4EF00359709 /* API.swift in Sources */,
 				16B098E127C6841100F45710 /* DetailsTableViewCell.swift in Sources */,
 				168CAFB227BA6FDA00E52AE4 /* WeekDetails.swift in Sources */,
 				16B8E84927C797E5000B8F0C /* UIViewController + AlertView.swift in Sources */,
@@ -460,24 +464,27 @@
 				DEVELOPMENT_TEAM = B48Q8RY5GC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = weather/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Weather ";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Give permanent access to the location";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = Description;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Give permanent access to the location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Home;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Hrzjaanti.weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -491,24 +498,27 @@
 				DEVELOPMENT_TEAM = B48Q8RY5GC;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = weather/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Weather ";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Give permanent access to the location";
 				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = Description;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Give permanent access to the location";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Home;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.7;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = Hrzjaanti.weather;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
