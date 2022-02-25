@@ -19,7 +19,7 @@ class DetailsViewController: UIViewController {
         self.tableView.rowHeight = 100
     }
     
-    public func initViewModel(model : [DetailsDaily]) {
+    public func initViewModel(model : [WeekDetails]) {
         viewModel.reloadTableView = {
             DispatchQueue.main.async { self.tableView.reloadData() }
         }
@@ -38,10 +38,10 @@ extension DetailsViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsTableViewCellID", for: indexPath) as! DetailsTableViewCell
-        let cellM = viewModel.getCell(indexPaths: indexPath)
-        cell.configuration(title: "\(cellM.title)\(suffixString(status: cellM.value))",
-                           imageName: "\(cellM.value)",
-                           color: setColor(status: "\(cellM.value)"))
+        let model = viewModel.getCell(indexPaths: indexPath)
+        cell.configuration(title: "\(model.title)\(suffixString(status: model.value))",
+                           imageName: "\(model.value)",
+                           color: setColor(status: "\(model.value)"))
         return cell
     }
 }

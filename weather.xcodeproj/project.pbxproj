@@ -32,7 +32,7 @@
 		16B8E84527C775C8000B8F0C /* UIViewController + SuffixString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8E84427C775C8000B8F0C /* UIViewController + SuffixString.swift */; };
 		16B8E84727C7946F000B8F0C /* String + UpperBound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8E84627C7946F000B8F0C /* String + UpperBound.swift */; };
 		16B8E84927C797E5000B8F0C /* UIViewController + AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8E84827C797E5000B8F0C /* UIViewController + AlertView.swift */; };
-		16F5E79C27BB0B500078221A /* StretchyTableHeader+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F5E79B27BB0B500078221A /* StretchyTableHeader+UIView.swift */; };
+		16F5E79C27BB0B500078221A /* StretchyTableHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F5E79B27BB0B500078221A /* StretchyTableHeader.swift */; };
 		16F5E79E27BB2D750078221A /* currentModelForView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16F5E79D27BB2D750078221A /* currentModelForView.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,7 +64,7 @@
 		16B8E84427C775C8000B8F0C /* UIViewController + SuffixString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + SuffixString.swift"; sourceTree = "<group>"; };
 		16B8E84627C7946F000B8F0C /* String + UpperBound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + UpperBound.swift"; sourceTree = "<group>"; };
 		16B8E84827C797E5000B8F0C /* UIViewController + AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + AlertView.swift"; sourceTree = "<group>"; };
-		16F5E79B27BB0B500078221A /* StretchyTableHeader+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StretchyTableHeader+UIView.swift"; sourceTree = "<group>"; };
+		16F5E79B27BB0B500078221A /* StretchyTableHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StretchyTableHeader.swift; sourceTree = "<group>"; };
 		16F5E79D27BB2D750078221A /* currentModelForView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = currentModelForView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,9 +151,9 @@
 		167BDFAF27B94A1500BF7C83 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				168BD50B27C6469C00A9557B /* CurrentLocation.swift */,
-				16F5E79B27BB0B500078221A /* StretchyTableHeader+UIView.swift */,
 				165368C227C7D4EF00359709 /* API.swift */,
+				16F5E79B27BB0B500078221A /* StretchyTableHeader.swift */,
+				168BD50B27C6469C00A9557B /* CurrentLocation.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -300,7 +300,7 @@
 			files = (
 				167BDFB127B94A4100BF7C83 /* HomeViewController.swift in Sources */,
 				167BDFB827B9532600BF7C83 /* RequestHelper.swift in Sources */,
-				16F5E79C27BB0B500078221A /* StretchyTableHeader+UIView.swift in Sources */,
+				16F5E79C27BB0B500078221A /* StretchyTableHeader.swift in Sources */,
 				16B098E327C6990C00F45710 /* String+EpechToHour.swift in Sources */,
 				16B8E84727C7946F000B8F0C /* String + UpperBound.swift in Sources */,
 				168BD51D27C6597200A9557B /* DetailsModel.swift in Sources */,

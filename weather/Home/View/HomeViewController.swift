@@ -49,6 +49,7 @@ class HomeViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     private func configurationUIRefresh() {
+        refreshControl.tintColor = .systemBlue
         refreshControl.addTarget(self,
                                  action: #selector(self.refresh(_:)),
                                  for: .valueChanged)
@@ -85,8 +86,7 @@ extension HomeViewController : UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = UIStoryboard.init(name: "Details", bundle: Bundle.main).instantiateViewController(withIdentifier: "DetailsViewControllerID") as? DetailsViewController
-        let rowsDetails = viewModel.getCell(indexPaths: indexPath)
-        vc?.initViewModel(model: viewModel.createDetails([rowsDetails]))
+        vc?.initViewModel(model: [viewModel.getCell(indexPaths: indexPath)])
         self.navigationController?.pushViewController(vc!, animated: true)
         
     }
