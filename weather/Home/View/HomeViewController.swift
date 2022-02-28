@@ -6,9 +6,8 @@
 //
 
 import UIKit
-import CoreLocation
 
-class HomeViewController: UIViewController, CLLocationManagerDelegate {
+class HomeViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     fileprivate let viewModel = HomeViewModel()
